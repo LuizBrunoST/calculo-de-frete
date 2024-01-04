@@ -14,7 +14,7 @@ class CalculadoraFrete
     * @var array
     */
 
-    // Tabela de preços padrões por estado
+    // Tabela de preços padrões por estado DADO FICTICIOS
     private static $tabelaPrecos = [
         'AC' => 25.00,
         'AL' => 22.00,
@@ -22,7 +22,7 @@ class CalculadoraFrete
         'AM' => 30.00,
         'BA' => 18.00,
         'CE' => 21.00,
-        'DF' => 15.00,
+        'DF' => 60.00,
         'ES' => 20.00,
         'GO' => 17.00,
         'MA' => 23.00,
@@ -87,18 +87,3 @@ class CalculadoraFrete
         }
     }
 }
-
-// Exemplo de uso
-$pesoProduto = 1; // em kg
-$estadoDestino = 'PR'; // Destino
-$caixa = 'RPC 7B'; // Valor da caixa
-
-$frete = CalculadoraFrete::calcularFrete($pesoProduto, $estadoDestino, $caixa);
-
-if (is_numeric($frete)) {
-    echo "O custo do frete é: R$ " . number_format($frete, 2, ',', '.');
-} else {
-    echo $frete;
-}
-
-?>
